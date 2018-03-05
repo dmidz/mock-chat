@@ -25,7 +25,6 @@
 		}
 		, methods:{
 			onNewMessage( message, emitter ){
-				// console.log('onNewMessage', arguments );
 				this.$store.commit('addMessage', {message:message, datetime:new Date(), author:emitter});
 			}
 		}

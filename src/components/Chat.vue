@@ -41,8 +41,8 @@
 				default(){
 					return new Intl.DateTimeFormat("en-US", {
 						hour: "numeric", minute: "numeric"
-						// , second: "numeric",
 						,timeZoneName: "short"
+						// , second: "numeric",
 						// , hour12:true
 					});
 				}
@@ -69,7 +69,6 @@
 		}
 		, methods:{
 			onSubmitMessage(){
-				// console.log('onSubmitMessage', this.$refs.message );
 				if(!this.$refs.message.value.length)	return;
 				this.$emit('new_message', this.$refs.message.value, this.user );
 				this.$refs.message.value = '';
@@ -77,7 +76,6 @@
 		}
 		, watch:{
 			conversation(){
-				// console.log('conv')
 				const me = this;
 				this.$nextTick(function(){
 					me.$refs.conversation.scrollTop = me.$refs.conversation.scrollHeight;
@@ -88,8 +86,8 @@
 </script>
 
 <style lang="scss">
-/*$img: require('@/assets/img/ps60_web.jpg' );*/
-$color-primary: #1ed497;
+
+	$color-primary: #1ed497;
 
 .chat {
 	padding:20px 20px 35px 20px;
@@ -112,12 +110,10 @@ $color-primary: #1ed497;
 		overflow-y:auto;
 
 		.box-message {
-			/*border:1px solid #eee;*/
 			align-items:flex-end;
 			margin-bottom:0.5em;
 
 			.gutter {
-				/*width:48px;*/
 				display:flex;
 				flex-direction:row;
 				padding:0.5em;
@@ -131,8 +127,6 @@ $color-primary: #1ed497;
 				border-radius:50%;
 				margin-bottom:0.25em;
 				background-color:#fff;
-				/*background-image:url(~@/assets/img/galaxy_avatar.jpg);*/
-				/*color:$color-primary;*/
 			}
 
 			.content {
@@ -178,7 +172,6 @@ $color-primary: #1ed497;
 		}
 	}
 	.box-type {
-		/*border-bottom:1px solid #ccc;*/
 
 		input[name="message"] {
 			flex:1;
@@ -190,7 +183,6 @@ $color-primary: #1ed497;
 			border-left:5px solid $color-primary;
 			color:#367d65;
 
-			/*box-shadow:0 0 3px rgba(0,0,0,0.5) inset;*/
 		}
 		input[name="message"]::placeholder {
 			color:#aaa;
@@ -221,18 +213,12 @@ $color-primary: #1ed497;
 		right:0;
 		bottom:0;
 		top:0;
-		/*opacity:0.8;*/
 		overflow:hidden;
 
 		img {
 			width:100%;
 			height:auto;
 			min-width:1475px;
-			/*height:100%;
-			width:100%;*/
-			/*display:inline-block;*/
-
-
 		}
 	}
 
